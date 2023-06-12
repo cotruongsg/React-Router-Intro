@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import VendingMachine from "./VendingMachine";
 import Sardines from "./Sardines";
@@ -9,20 +9,12 @@ import Soda from "./Soda";
 function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" exact>
-          <VendingMachine />
-        </Route>
-        <Route path="/soda" exact>
-          <Soda />
-        </Route>
-        <Route path="/chips" exact>
-          <Chips />
-        </Route>
-        <Route path="/sardines" exact>
-          <Sardines />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" exact element={<VendingMachine />} />
+        <Route path="/soda" exact element={<Soda />} />
+        <Route path="/chips" exact element={<Chips />} />
+        <Route path="/sardines" exact element={<Sardines />} />
+      </Routes>
     </BrowserRouter>
   );
 }
